@@ -1,0 +1,55 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello HelloWordController!{% endblock %}
+
+{% block body %}
+<style>
+    .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
+    .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
+</style>
+
+<div class="example-wrapper">
+    <h1>Hello {{ nom }}! ✅</h1>
+
+    This friendly message is coming from:
+    <ul>
+        <li>Your controller at <code><a href="{{ '/Users/macbook/projets/test-bts2-symfony/src/Controller/HelloWordController.php'|file_link(0) }}">src/Controller/HelloWordController.php</a></code></li>
+        <li>Your template at <code><a href="{{ '/Users/macbook/projets/test-bts2-symfony/templates/hello_word/index.html.twig'|file_link(0) }}">templates/hello_word/index.html.twig</a></code></li>
+    </ul>
+    <img src="../../public/img/img.tiff">
+    {# la façon de faire ci-dessouis permet d'avoir une dynamique correcte par rapport à la racine et donc d'éviter les erreurs #}
+    <img src="{{ asset('img/UUq.gif') }}" alt="gif de mignon qui râle">
+
+    <img src="/img/UUq.gif" >
+    <button type="button" class="btn btn-outline-danger">Danger</button>
+</div>
+
+    <div class="container">
+    <div id="monCarrousel" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-inner ">
+            <div class="carousel-item active">
+                <img src="/img/UUq.gif" class="d-block w-100 active" alt="Image 1">
+                <div class="carousel-caption">
+                    <!-- Contenu de la diapositive 1 -->
+                </div>
+            </div>
+            <div class="carousel-item">
+                <img src="/img/images.jpeg" class="d-block w-100" alt="Image 2">
+                <div class="carousel-caption">
+                    <!-- Contenu de la diapositive 2 -->
+                </div>
+            </div>
+            <!-- Ajoutez plus de diapositives ici si nécessaire -->
+        </div>
+        <a class="carousel-control-prev" href="#monCarrousel" role="button" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Précédent</span>
+        </a>
+        <a class="carousel-control-next" href="#monCarrousel" role="button" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Suivant</span>
+        </a>
+    </div>
+    </div>
+
+{% endblock %}
