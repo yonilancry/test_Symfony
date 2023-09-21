@@ -15,6 +15,7 @@
                 <th>Prenom</th>
                 <th>Sexe</th>
                 <th>Anniversaire</th>
+                <th>Établissement</th>
                 <th>actions</th>
             </tr>
         </thead>
@@ -26,6 +27,7 @@
                 <td>{{ etudiant.prenom }}</td>
                 <td>{{ etudiant.sexe }}</td>
                 <td>{{ etudiant.anniversaire ? etudiant.anniversaire|date('Y-m-d') : '' }}</td>
+                <td>{{ etudiant.etablissement.nom }}</td>
                 <td>
                     <a href="{{ path('app_etudiant_show', {'id': etudiant.id}) }}">show</a>
                     <a href="{{ path('app_etudiant_edit', {'id': etudiant.id}) }}">edit</a>

@@ -2,12 +2,14 @@
 
 namespace App\Form;
 
+use App\Entity\Etablissement;
 use App\Entity\Etudiant;
-use Doctrine\DBAL\Types\TextType;
+use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
+use Symfony\Component\Form\Extension\Core\Type\DateType;
 
 class EtudiantType extends AbstractType
 {
@@ -24,7 +26,14 @@ class EtudiantType extends AbstractType
                     "Homme"=>2,
                 ],
             ])
-            ->add('anniversaire')
+            ->add('anniversaire', DateType::class,[
+                'years'=>range(1970,2023)
+
+            ])
+            ->add('etablissement',EntityType::class,[
+                'class'=>Etablissement::class,
+                'choice_label'=>'nom'
+                ])
         ;
     }
 
